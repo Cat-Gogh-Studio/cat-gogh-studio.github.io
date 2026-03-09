@@ -6,61 +6,80 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Cat Gogh Studio blends software development and digital art into immersive brand experiences." />
-    <title>Cat Gogh Studio | Software + Digital Art</title>
+    <meta
+      name="description"
+      content="Cat Gogh Studio sells digital art, handcrafted art, and software artifacts for modern brands and creators."
+    />
+    <title>Cat Gogh Studio | Art + Software Artifacts</title>
   </head>
   <body>
     <main>
-      <section class="hero">
-        <p>Welcome to Cat Gogh Studio</p>
-        <h1>Where engineering precision meets digital artistry.</h1>
-        <p>
-          Cat Gogh Studio started as a sketchbook full of feline characters and grew into a creative technology studio
-          helping brands ship software products wrapped in unforgettable visual storytelling.
+      <section class="hero" aria-label="Introduction">
+        <p class="eyebrow">Cat Gogh Studio</p>
+        <h1>Professional creative products at the intersection of art and software.</h1>
+        <p class="hero-copy">
+          We help creators, teams, and businesses stand out with premium digital art, handcrafted art pieces,
+          and production-ready software artifacts. Built with taste, delivered with reliability.
         </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#lead-form">Get pricing & availability</a>
+          <a class="btn secondary" href="mailto:hello@catgogh.studio">Email the studio</a>
+        </div>
       </section>
 
-      <section class="story-grid" aria-label="Studio pillars">
+      <section class="services" aria-label="What we offer">
         <article class="card">
-          <h2>Chapter 1: Curiosity</h2>
-          <p>
-            We began with a simple question: why should apps feel sterile? Cat Gogh Studio explored how playful art,
-            character design, and narrative can make interfaces more human and memorable.
-          </p>
+          <h2>Digital Art</h2>
+          <p>Illustrations, character packs, assets, and branded visual systems ready for web, social, and product use.</p>
         </article>
         <article class="card">
-          <h2>Chapter 2: Craft</h2>
-          <p>
-            Today we build modern web experiences, internal tools, and custom digital products with clean architecture,
-            maintainable code, and thoughtful interaction design.
-          </p>
+          <h2>Crafted Art Shop</h2>
+          <p>Handcrafted pieces made in small batches for collectors, creative workspaces, and gift-ready orders.</p>
         </article>
         <article class="card">
-          <h2>Chapter 3: Fusion</h2>
-          <p>
-            Our unique value is the fusion: software development plus digital art direction. You get robust products and
-            a visual identity that feels distinctly yours.
-          </p>
+          <h2>Software Artifacts</h2>
+          <p>High-quality software components, internal tools, and polished product deliverables that teams can ship fast.</p>
         </article>
       </section>
 
-      <section class="timeline" aria-label="Studio timeline">
-        <h2>The Cat Gogh Story</h2>
+      <section class="proof" aria-label="Why clients choose us">
+        <h2>Why Cat Gogh Studio</h2>
         <ul>
-          <li><strong>2019:</strong> First illustrated prototypes launched for indie creators.</li>
-          <li><strong>2021:</strong> Expanded into full-stack development for startups and creative agencies.</li>
-          <li><strong>2023:</strong> Introduced digital mural packs, animated assets, and interactive brand worlds.</li>
-          <li><strong>2026:</strong> Continuing to deliver software that performs beautifully and art that works hard.</li>
+          <li><strong>Cross-disciplinary expertise:</strong> one partner for visual quality and technical execution.</li>
+          <li><strong>Business-friendly delivery:</strong> clear scope, timelines, and communication.</li>
+          <li><strong>Scalable output:</strong> from one-off commissions to ongoing collaboration.</li>
         </ul>
       </section>
 
-      <section class="cta">
-        <h2>Build something vivid.</h2>
-        <p>
-          Whether you need a production-ready app, a digital art campaign, or both, Cat Gogh Studio can bring your
-          story to life.
-        </p>
-        <a href="mailto:hello@catgogh.studio">Start your project</a>
+      <section class="lead" id="lead-form" aria-label="Lead capture form">
+        <div>
+          <h2>Tell us what you need</h2>
+          <p>
+            Share a few details and we’ll respond with the best next step, pricing direction, and availability.
+          </p>
+        </div>
+
+        <form action="mailto:hello@catgogh.studio" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="interest">Primary interest</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Digital art</option>
+            <option>Crafted art shop</option>
+            <option>Software artifacts</option>
+            <option>Multiple services</option>
+          </select>
+
+          <label for="details">Project details</label>
+          <textarea id="details" name="details" rows="4" placeholder="Goals, timeline, and budget range"></textarea>
+
+          <button type="submit">Request a consultation</button>
+        </form>
       </section>
     </main>
   </body>
