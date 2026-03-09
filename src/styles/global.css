@@ -27,6 +27,22 @@ main {
   padding: 2rem 1.25rem 4rem;
 }
 
+
+.lang-switcher {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.lang-switcher label {
+  color: var(--muted);
+}
+
+.lang-switcher select {
+  min-width: 130px;
+}
+
 .hero {
   padding: 4rem 0 2rem;
   text-align: center;

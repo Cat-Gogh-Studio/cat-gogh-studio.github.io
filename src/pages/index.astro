@@ -1,86 +1,172 @@
 ---
 import '../styles/global.css';
+import { defaultLanguage, translations } from '../i18n/translations';
+
+const t = translations[defaultLanguage];
 ---
 
-<html lang="en">
+<html lang={t.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Cat Gogh Studio sells digital art, handcrafted art, and software artifacts for modern brands and creators."
-    />
-    <title>Cat Gogh Studio | Art + Software Artifacts</title>
+    <meta name="description" content={t.metaDescription} />
+    <title>{t.pageTitle}</title>
   </head>
   <body>
     <main>
+      <div class="lang-switcher">
+        <label for="language-select" data-i18n="langLabel">{t.langLabel}</label>
+        <select id="language-select" name="language">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+
       <section class="hero" aria-label="Introduction">
-        <p class="eyebrow">Cat Gogh Studio</p>
-        <h1>Professional creative products at the intersection of art and software.</h1>
-        <p class="hero-copy">
-          We help creators, teams, and businesses stand out with premium digital art, handcrafted art pieces,
-          and production-ready software artifacts. Built with taste, delivered with reliability.
+        <p class="eyebrow" data-i18n="hero.eyebrow">{t.hero.eyebrow}</p>
+        <h1 data-i18n="hero.title">{t.hero.title}</h1>
+        <p class="hero-copy" data-i18n="hero.copy">
+          {t.hero.copy}
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#lead-form">Get pricing & availability</a>
-          <a class="btn secondary" href="mailto:hello@catgogh.studio">Email the studio</a>
+          <a class="btn primary" href="#lead-form" data-i18n="hero.ctaPrimary">{t.hero.ctaPrimary}</a>
+          <a class="btn secondary" href="mailto:hello@catgogh.studio" data-i18n="hero.ctaSecondary">{t.hero.ctaSecondary}</a>
         </div>
       </section>
 
-      <section class="services" aria-label="What we offer">
+      <section class="services" aria-label={t.services.ariaLabel} data-i18n-aria-label="services.ariaLabel">
         <article class="card">
-          <h2>Digital Art</h2>
-          <p>Illustrations, character packs, assets, and branded visual systems ready for web, social, and product use.</p>
+          <h2 data-i18n="services.digitalArtTitle">{t.services.digitalArtTitle}</h2>
+          <p data-i18n="services.digitalArtCopy">{t.services.digitalArtCopy}</p>
         </article>
         <article class="card">
-          <h2>Crafted Art Shop</h2>
-          <p>Handcrafted pieces made in small batches for collectors, creative workspaces, and gift-ready orders.</p>
+          <h2 data-i18n="services.craftedArtTitle">{t.services.craftedArtTitle}</h2>
+          <p data-i18n="services.craftedArtCopy">{t.services.craftedArtCopy}</p>
         </article>
         <article class="card">
-          <h2>Software Artifacts</h2>
-          <p>High-quality software components, internal tools, and polished product deliverables that teams can ship fast.</p>
+          <h2 data-i18n="services.softwareArtifactsTitle">{t.services.softwareArtifactsTitle}</h2>
+          <p data-i18n="services.softwareArtifactsCopy">{t.services.softwareArtifactsCopy}</p>
         </article>
       </section>
 
-      <section class="proof" aria-label="Why clients choose us">
-        <h2>Why Cat Gogh Studio</h2>
+      <section class="proof" aria-label={t.proof.ariaLabel} data-i18n-aria-label="proof.ariaLabel">
+        <h2 data-i18n="proof.title">{t.proof.title}</h2>
         <ul>
-          <li><strong>Cross-disciplinary expertise:</strong> one partner for visual quality and technical execution.</li>
-          <li><strong>Business-friendly delivery:</strong> clear scope, timelines, and communication.</li>
-          <li><strong>Scalable output:</strong> from one-off commissions to ongoing collaboration.</li>
+          <li data-i18n-html="proof.point1">{t.proof.point1}</li>
+          <li data-i18n-html="proof.point2">{t.proof.point2}</li>
+          <li data-i18n-html="proof.point3">{t.proof.point3}</li>
         </ul>
       </section>
 
-      <section class="lead" id="lead-form" aria-label="Lead capture form">
+      <section class="lead" id="lead-form" aria-label={t.lead.ariaLabel} data-i18n-aria-label="lead.ariaLabel">
         <div>
-          <h2>Tell us what you need</h2>
-          <p>
-            Share a few details and we’ll respond with the best next step, pricing direction, and availability.
+          <h2 data-i18n="lead.title">{t.lead.title}</h2>
+          <p data-i18n="lead.copy">
+            {t.lead.copy}
           </p>
         </div>
 
         <form action="mailto:hello@catgogh.studio" method="post" enctype="text/plain">
-          <label for="name">Name</label>
+          <label for="name" data-i18n="lead.nameLabel">{t.lead.nameLabel}</label>
           <input id="name" name="name" type="text" required />
 
-          <label for="email">Email</label>
+          <label for="email" data-i18n="lead.emailLabel">{t.lead.emailLabel}</label>
           <input id="email" name="email" type="email" required />
 
-          <label for="interest">Primary interest</label>
+          <label for="interest" data-i18n="lead.interestLabel">{t.lead.interestLabel}</label>
           <select id="interest" name="interest" required>
-            <option value="" disabled selected>Select one</option>
-            <option>Digital art</option>
-            <option>Crafted art shop</option>
-            <option>Software artifacts</option>
-            <option>Multiple services</option>
+            <option value="" disabled selected data-i18n="lead.interestPlaceholder">{t.lead.interestPlaceholder}</option>
+            <option data-i18n="lead.interestOptionDigital">{t.lead.interestOptionDigital}</option>
+            <option data-i18n="lead.interestOptionCrafted">{t.lead.interestOptionCrafted}</option>
+            <option data-i18n="lead.interestOptionSoftware">{t.lead.interestOptionSoftware}</option>
+            <option data-i18n="lead.interestOptionMultiple">{t.lead.interestOptionMultiple}</option>
           </select>
 
-          <label for="details">Project details</label>
-          <textarea id="details" name="details" rows="4" placeholder="Goals, timeline, and budget range"></textarea>
+          <label for="details" data-i18n="lead.detailsLabel">{t.lead.detailsLabel}</label>
+          <textarea
+            id="details"
+            name="details"
+            rows="4"
+            data-i18n-placeholder="lead.detailsPlaceholder"
+            placeholder={t.lead.detailsPlaceholder}
+          ></textarea>
 
-          <button type="submit">Request a consultation</button>
+          <button type="submit" data-i18n="lead.submit">{t.lead.submit}</button>
         </form>
       </section>
     </main>
+
+    <script type="application/json" id="translations-data" set:html={JSON.stringify(translations)}></script>
+    <script type="module" is:inline>
+      const defaultLanguage = 'en';
+      const languageStorageKey = 'cat-gogh-language';
+      const translationsNode = document.getElementById('translations-data');
+      const languageSelect = document.getElementById('language-select');
+      const translations = translationsNode ? JSON.parse(translationsNode.textContent || '{}') : {};
+
+      const normalizeLanguage = (value) => {
+        if (!value) return defaultLanguage;
+        const shortCode = value.toLowerCase().split('-')[0];
+        return Object.prototype.hasOwnProperty.call(translations, shortCode) ? shortCode : defaultLanguage;
+      };
+
+      const getByPath = (obj, path) => path.split('.').reduce((current, key) => (current ? current[key] : undefined), obj);
+
+      const applyLanguage = (lang) => {
+        const locale = translations[lang] || translations[defaultLanguage];
+        document.documentElement.lang = locale.htmlLang;
+        document.title = locale.pageTitle;
+
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+          metaDescription.setAttribute('content', locale.metaDescription);
+        }
+
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+          const value = getByPath(locale, element.dataset.i18n);
+          if (typeof value === 'string') {
+            element.textContent = value;
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach((element) => {
+          const value = getByPath(locale, element.dataset.i18nHtml);
+          if (typeof value === 'string') {
+            element.innerHTML = value;
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+          const value = getByPath(locale, element.dataset.i18nPlaceholder);
+          if (typeof value === 'string') {
+            element.setAttribute('placeholder', value);
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
+          const value = getByPath(locale, element.dataset.i18nAriaLabel);
+          if (typeof value === 'string') {
+            element.setAttribute('aria-label', value);
+          }
+        });
+      };
+
+      const urlLanguage = new URLSearchParams(window.location.search).get('lang');
+      const savedLanguage = window.localStorage.getItem(languageStorageKey);
+      const browserLanguage = navigator.language;
+      const initialLanguage = normalizeLanguage(urlLanguage || savedLanguage || browserLanguage);
+
+      if (languageSelect) {
+        languageSelect.value = initialLanguage;
+        languageSelect.addEventListener('change', (event) => {
+          const selectedLanguage = normalizeLanguage(event.target.value);
+          window.localStorage.setItem(languageStorageKey, selectedLanguage);
+          applyLanguage(selectedLanguage);
+        });
+      }
+
+      window.localStorage.setItem(languageStorageKey, initialLanguage);
+      applyLanguage(initialLanguage);
+    </script>
   </body>
 </html>
